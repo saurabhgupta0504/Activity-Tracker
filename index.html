@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#4F7CAC">
 <title>Activity Tracker</title>
+ <link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg">
 <style>
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   body { margin: 0; font-family: -apple-system, Roboto, Arial, sans-serif; background: #F3F6F9; color: #25324A; }
@@ -207,6 +209,9 @@ function importData(e) {
   };
   r.readAsText(f);
 }
+ if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js');
+ }
 </script>
 </body>
 </html>
